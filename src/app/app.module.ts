@@ -4,11 +4,12 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { TformComponent } from './tform/tform.component';
+import { RformComponent } from './rform/rform.component';
 
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, TformComponent ],
+  declarations: [ AppComponent, TformComponent, RformComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
