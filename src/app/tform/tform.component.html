@@ -1,4 +1,38 @@
-<h2>Register Yourself !</h2>
-<div>  
-  
+
+<div class="card">
+<div class="card-heading"><h2 style="text-align:center;">Register Yourself !</h2></div> 
+<div class="card-body">
+  <form #studentform="ngForm">
+    <div class="form-group">
+      <input required type="text" placeholder="Name" #name="ngModel" [class.is-invalid]="name.touched && name.invalid" class="form-control" name="name" [(ngModel)]="studentModel.name"/>
+    <p class="text-danger" *ngIf="name.touched && name.invalid">Name is required!</p>
+    </div>
+    <div class="form-group">
+      <input required type="password" placeholder="Password" #password="ngModel" [class.is-invalid]="password.touched && password.invalid" class="form-control" name="password" [(ngModel)]="studentModel.password"/>
+      <p class="text-danger" *ngIf="password.touched && password.invalid">Password is required!</p>
+    </div>
+    <div class="form-group">
+      <input required type="datetime" placeholder="Date of Birth" #date="ngModel" [class.is-invalid]="date.touched && date.invalid" class="form-control" name="dob" [(ngModel)]="studentModel.date">
+      <i class="fa fa-calendar" aria-hidden="true"></i>
+      <p class="text-danger" *ngIf="date.touched && date.invalid">DOB is required!</p>
+    </div>
+    <div class="form-group">
+      <label>Gender</label>
+      <select  required #gender="ngModel" [class.is-invalid]="gender.touched && gender.invalid" class="form-control" name="gender" [(ngModel)]="studentModel.gender">
+      <option value="" disabled="disabled" selected="selected">Select Gender</option>
+      <option *ngFor="let gender of gen" value="gender">{{gender}}</option>
+      </select>
+      <p class="text-danger" *ngIf="gender.touched && gender.invalid">Gender is required!</p>
+    </div>
+    <div class="form-group">
+      <input required type="email" placeholder="Email" #email="ngModel" [class.is-invalid]="email.touched && email.invalid" class="form-control" name="email" [(ngModel)]="studentModel.email">
+      <p class="text-danger" *ngIf="email.touched && email.invalid">Email is required!</p>
+    </div>
+    <div class="form-group">
+      <input required type="tel" placeholder="Phone" #phone="ngModel" [class.is-invalid]="phone.touched && phone.invalid" class="form-control" name="phone" [(ngModel)]="studentModel.phone">
+      <p class="text-danger" *ngIf="phone.touched && phone.invalid">Phone no is required!</p>
+    </div>
+    <button type="submit" [disabled]="!studentform.form.valid">Submit</button>
+  </form>  
+</div>
 </div>

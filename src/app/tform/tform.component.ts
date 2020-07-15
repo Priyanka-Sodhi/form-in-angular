@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Student} from './student';
 
 @Component({
   selector: 'app-tform',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TformComponent implements OnInit {
 
+  studentModel:any;
+
   constructor() { }
 
+  gen:string[]=["Male","Female","Other"]
+
   ngOnInit() {
+    this.studentModel=new Student("","","","","")
   }
 
 }
