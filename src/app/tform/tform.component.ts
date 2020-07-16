@@ -13,7 +13,7 @@ export class TformComponent implements OnInit {
 
   constructor() { }
 
-  gen:string[]=["Male","Female","Other"]
+  Gender:string[]=["Male","Female","Other"]
 
   ngOnInit() {
     this.studentModel=new Student("","","","","")

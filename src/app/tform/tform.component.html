@@ -1,5 +1,6 @@
+<div class="bg">
 <div class="card">
-<div class="card-heading"><h2 style="text-align:center;">Register Yourself !</h2></div> 
+<div class="card-heading"><h2 style="text-align:center;">Register Yourself !</h2></div> <hr>
 <div class="card-body">
   <form #studentform="ngForm">
     <div class="form-group">
@@ -13,16 +14,14 @@
     </div>
 
     <div class="form-group">
-      <input required type="datetime" placeholder="Date of Birth" #date="ngModel" [class.is-invalid]="date.touched && date.invalid" class="datepicker" name="dob" [(ngModel)]="studentModel.date">
-      <i class="fa fa-calendar" aria-hidden="true"></i>
+      <input required type="text" placeholder="Date of Birth" onfocus="(this.type='date')" onblur="(this.type='text')" #date="ngModel" [class.is-invalid]="date.touched && date.invalid" name="dob" [(ngModel)]="studentModel.date">
       <p class="text-danger" *ngIf="date.touched && date.invalid">DOB is required!</p>
     </div>
     
     <div class="form-group">
-      <label>Gender</label>
-      <select  required #gender="ngModel" [class.is-invalid]="gender.touched && gender.invalid" class="form-control" name="gender" [(ngModel)]="studentModel.gender">
-      <option value="" disabled="disabled" selected="selected">Select Gender</option>
-      <option *ngFor="let Gender of gen" value="Gender">{{Gender}}</option>
+      <select  required #gender="ngModel" [class.is-invalid]="gender.touched && gender.invalid" class="form-control"  name="gender" [(ngModel)]="studentModel.gender">
+      <option [ngValue]="undefined" disabled>Select Gender</option>
+      <option *ngFor="let g of Gender" value="g">{{g}}</option>
       </select>
       <p class="text-danger" *ngIf="gender.touched && gender.invalid">Gender is required!</p>
     </div>
@@ -36,9 +35,11 @@
       <input required type="tel" placeholder="Phone" #phone="ngModel" [class.is-invalid]="phone.touched && phone.invalid" class="form-control" name="phone" [(ngModel)]="studentModel.phone">
       <p class="text-danger" *ngIf="phone.touched && phone.invalid">Phone no is required!</p>
     </div>
-    
-    <button type="submit" >Submit</button>
+    <div class="bt">
+    <button type="submit"  class="waves-effect waves-light btn-large">Submit</button>
+    </div>
   </form>  
+</div>
 </div>
 </div>
 <!-- [disabled]="!studentform.form.valid" -->
