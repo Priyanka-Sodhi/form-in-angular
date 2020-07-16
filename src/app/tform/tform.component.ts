@@ -18,4 +18,13 @@ export class TformComponent implements OnInit {
   ngOnInit() {
     this.studentModel=new Student("","","","","")
   }
+
+alert:boolean=false
+handlebutton(){
+  this.alert=true;
+}
+closeAlert(){
+  this.alert=false;
+}
+
 }

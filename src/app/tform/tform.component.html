@@ -1,8 +1,14 @@
 <div class="bg">
 <div class="card">
 <div class="card-heading"><h2 style="text-align:center;">Register Yourself !</h2></div> <hr>
+<div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Successfully Submitted!</strong> 
+  <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
 <div class="card-body">
-  <form #studentform="ngForm">
+  <form #studentform="ngForm" (ngSubmit)="handlebutton(); studentform.reset()">
     <div class="form-group">
       <input required type="text" placeholder="Name" #name="ngModel" [class.is-invalid]="name.touched && name.invalid" class="form-control" name="name" [(ngModel)]="studentModel.name"/>
     <p class="text-danger" *ngIf="name.touched && name.invalid">Name is required!</p>
@@ -36,10 +42,9 @@
       <p class="text-danger" *ngIf="phone.touched && phone.invalid">Phone no is required!</p>
     </div>
     <div class="bt">
-    <button type="submit"  class="waves-effect waves-light btn-large">Submit</button>
+    <button type="submit"  class="waves-effect waves-light btn-large" (click)="handlebutton()" [disabled]="!studentform.form.valid">Submit</button>
     </div>
   </form>  
 </div>
 </div>
 </div>
-<!-- [disabled]="!studentform.form.valid" -->
