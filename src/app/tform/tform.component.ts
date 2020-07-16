@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Student} from './student';
 
+
 @Component({
   selector: 'app-tform',
   templateUrl: './tform.component.html',
@@ -17,5 +18,4 @@ export class TformComponent implements OnInit {
   ngOnInit() {
     this.studentModel=new Student("","","","","")
   }
-
 }

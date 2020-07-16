@@ -1,4 +1,3 @@
-
 <div class="card">
 <div class="card-heading"><h2 style="text-align:center;">Register Yourself !</h2></div> 
 <div class="card-body">
@@ -14,7 +13,7 @@
     </div>
 
     <div class="form-group">
-      <input required type="datetime" placeholder="Date of Birth" #date="ngModel" [class.is-invalid]="date.touched && date.invalid" class="form-control" name="dob" [(ngModel)]="studentModel.date">
+      <input required type="datetime" placeholder="Date of Birth" #date="ngModel" [class.is-invalid]="date.touched && date.invalid" class="datepicker" name="dob" [(ngModel)]="studentModel.date">
       <i class="fa fa-calendar" aria-hidden="true"></i>
       <p class="text-danger" *ngIf="date.touched && date.invalid">DOB is required!</p>
     </div>
@@ -23,7 +22,7 @@
       <label>Gender</label>
       <select  required #gender="ngModel" [class.is-invalid]="gender.touched && gender.invalid" class="form-control" name="gender" [(ngModel)]="studentModel.gender">
       <option value="" disabled="disabled" selected="selected">Select Gender</option>
-      <option *ngFor="let gender of gen" value="gender">{{gender}}</option>
+      <option *ngFor="let Gender of gen" value="Gender">{{Gender}}</option>
       </select>
       <p class="text-danger" *ngIf="gender.touched && gender.invalid">Gender is required!</p>
     </div>
