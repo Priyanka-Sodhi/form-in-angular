@@ -18,5 +18,12 @@ label{
 }
 ::placeholder{
   font-size:20px;
+}
+button{
+  font-size:20px;
   color:white;
+  background-color: #1b6d21;
+  border:none;
+  border-radius:50px;
+  padding:8px 25px 8px 25px;
 }
