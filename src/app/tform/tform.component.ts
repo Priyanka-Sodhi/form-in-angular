@@ -22,6 +22,7 @@ export class TformComponent implements OnInit {
 alert:boolean=false
 handlebutton(){
   this.alert=true;
+  console.log(this.studentModel)
 }
 closeAlert(){
   this.alert=false;
