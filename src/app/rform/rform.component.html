@@ -1,0 +1,50 @@
+<div class="bg">
+<div class="card">
+<div class="card-heading"><h2 style="text-align:center;font-family:Times New Roman;font-weight:bold">Register Yourself !</h2></div> <hr>
+<div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Successfully Submitted!</strong> 
+  <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="card-body">
+  <form [formGroup]="registrationForm" (ngSubmit)="handlebutton();">
+    <div class="form-group">
+      <input required type="text" placeholder="Name" [class.is-invalid]="name.touched && name.invalid" class="form-control" formControlName="name"/>
+    <p class="text-danger" *ngIf="name.touched && name.invalid">Name is required!</p>
+    </div>
+    
+    <div class="form-group">
+      <input required type="password" placeholder="Password" [class.is-invalid]="password.touched && password.invalid" class="form-control" formControlName="password"/>
+      <p class="text-danger" *ngIf="password.touched && password.invalid">Password is required!</p>
+    </div>
+
+    <div class="form-group">
+      <input required type="text" placeholder="Date of Birth" onfocus="(this.type='date')" onblur="(this.type='text')" [class.is-invalid]="dob.touched && dob.invalid" formControlName="dob">
+      <p class="text-danger" *ngIf="dob.touched && dob.invalid">DOB is required!</p>
+    </div>
+    
+    <div class="form-group">
+      <select  required [class.is-invalid]="gender.touched && gender.invalid" class="form-control"  formControlName="gender">
+      <option [ngValue]="undefined" disabled>Select Gender</option>
+      <option *ngFor="let g of Gender" value="g">{{g}}</option>
+      </select>
+      <p class="text-danger" *ngIf="gender.touched && gender.invalid">Gender is required!</p>
+    </div>
+
+    <div class="form-group">
+      <input required type="email" placeholder="Email" [class.is-invalid]="email.touched && email.invalid" class="form-control" name="email">
+      <p class="text-danger" *ngIf="email.touched && email.invalid">Email is required!</p>
+    </div>
+
+    <div class="form-group">
+      <input required type="tel" placeholder="Phone" [class.is-invalid]="phone.touched && phone.invalid" class="form-control" formControlName="phone">
+      <p class="text-danger" *ngIf="phone.touched && phone.invalid">Phone no is required!</p>
+    </div>
+    <div class="bt">
+    <button type="submit"  class="waves-effect waves-light btn-large" (click)="handlebutton()">Submit</button>
+    </div>
+  </form>  
+</div>
+</div>
+</div>
