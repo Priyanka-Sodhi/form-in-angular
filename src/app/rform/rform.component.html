@@ -1,5 +1,6 @@
 <div class="bg">
 <div class="card">
+
 <div class="card-heading"><h2 style="text-align:center;font-family:Times New Roman;font-weight:bold">Register Yourself !</h2></div> <hr>
 <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
   <strong>Successfully Submitted!</strong> 
@@ -7,6 +8,7 @@
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
+
 <div class="card-body">
   <form [formGroup]="registrationForm" (ngSubmit)="handlebutton();">
     <div class="form-group">

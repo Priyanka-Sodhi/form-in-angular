@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormGroup,FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-rform',
@@ -51,6 +51,14 @@ closeAlert(){
   this.alert=false;
 }
 
+// <!-- Property declaration -->
+fieldTextType: boolean;
+
+
+// <!-- Switching method -->
+toggleFieldTextType() {
+  this.fieldTextType = !this.fieldTextType;
+}
 
      ngOnInit() {
   }
