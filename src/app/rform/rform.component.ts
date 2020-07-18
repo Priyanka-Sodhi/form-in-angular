@@ -34,7 +34,7 @@ export class RformComponent implements OnInit {
     name:["",Validators.required],
     password:["",Validators.required],
     dob:["",Validators.required],
-    gender:["",Validators.required],
+    gender:[null],
     email:["",Validators.required],
     phone:["",Validators.required]
      })
@@ -51,16 +51,7 @@ closeAlert(){
   this.alert=false;
 }
 
-// <!-- Property declaration -->
-fieldTextType: boolean;
-
-
-// <!-- Switching method -->
-toggleFieldTextType() {
-  this.fieldTextType = !this.fieldTextType;
-}
-
-     ngOnInit() {
+  ngOnInit() {
   }
 
 }

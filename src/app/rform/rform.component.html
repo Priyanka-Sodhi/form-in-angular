@@ -28,7 +28,7 @@
     
     <div class="form-group">
       <select  required [class.is-invalid]="gender.touched && gender.invalid" class="form-control"  formControlName="gender">
-      <option [ngValue]="undefined" disabled>Select Gender</option>
+      <option [ngValue]="null" disabled>Select Gender</option>
       <option *ngFor="let g of Gender" value="g">{{g}}</option>
       </select>
       <p class="text-danger" *ngIf="gender.touched && gender.invalid">Gender is required!</p>
